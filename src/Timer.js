@@ -16,8 +16,11 @@ class Timer extends Component {
     "#" + Math.floor(Math.random() * 16777215).toString(16);
   }
   
-  shouldComponentUpdate(nextProps, state) {
-  return (this.props.myImportantValue !== nextProps.myImportantValue);
+shouldComponentUpdate(nextProps, nextState) {
+  if (this.state.time === nextState.time) {
+    return false
+  }
+  return true
 }
 
   componentDidMount() {
