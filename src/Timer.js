@@ -11,6 +11,11 @@ class Timer extends Component {
   }
 
   //Your code here
+    componentDidUpdate(previousProps, previousState) {
+   if (previousProps.height !== this.props.height) {
+     someChartLibrary.updateHeight(this.props.height);
+   }
+  }
 
   componentDidMount() {
     this.interval = setInterval(
