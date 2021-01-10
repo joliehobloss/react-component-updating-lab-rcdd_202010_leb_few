@@ -12,9 +12,8 @@ class Timer extends Component {
 
   //Your code here
     componentDidUpdate(previousProps, previousState) {
-   if (previousProps.height !== this.props.height) {
-     someChartLibrary.updateHeight(this.props.height);
-   }
+     this.timer.current.style.color =
+    "#" + Math.floor(Math.random() * 16777215).toString(16);
   }
 
   componentDidMount() {
